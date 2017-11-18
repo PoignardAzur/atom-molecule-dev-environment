@@ -122,7 +122,7 @@
     "rules": {
       "no-console": "warn",
       "no-unused-vars": ["warn", {
-        "argsIgnorePattern": "helperAPI|taskAPI|dirname"
+        "argsIgnorePattern": "helperAPI|taskAPI|dirname|resolve|reject"
       }],
       "prettier/prettier": ["error", {
         "trailingComma": "all"
