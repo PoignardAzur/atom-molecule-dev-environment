@@ -53,7 +53,7 @@
     "color-hash": "^1.0.3",
     "fb-watchman": "^2.0.0",
     "flow-language-server": "^0.5.0",
-    "immutable": "^3.8.1",
+    "immutable": "^4.0.0-rc.12",
     "jest-cli": "^23.1.0",
     "less": "^3.0.4",
     "mocha": "^5.1.1",

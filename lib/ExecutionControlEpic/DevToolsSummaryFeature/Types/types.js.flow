@@ -3,6 +3,7 @@
 
 import type { PlanConfig } from "../../PlanConfigurationFeature/Types/types";
 import type { PluginInfo } from "../../DevtoolLoadingFeature/Types/types";
+import type { TaskState } from "../../TaskExecutionFeature/Types/types";
 
 export type DevTool = PluginInfo & {
   id: string,
@@ -10,14 +11,16 @@ export type DevTool = PluginInfo & {
 };
 
 export type DevToolWithDiagnostics = DevTool & {
+  state: TaskState,
   errors: number,
-  successes: number,
   warnings: number,
   info: number,
+  successes: number,
   planColor?: string,
   showColor?: boolean,
-  legend?: string,
-  index?: number,
-  plan?: PlanConfig,
+  busy: boolean,
+  legend: string,
+  index: number,
+  plan: PlanConfig,
   notifier: ?events$EventEmitter,
 };

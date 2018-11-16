@@ -58,28 +58,26 @@ export type HelperAPI = {
 export type Shell = string;
 
 export type StrategyBase = {
-  cwd: string,
-  env: ProcessEnv,
+  cwd?: string,
+  env?: ProcessEnv,
 }
 
-export type NodeProcessStrategyType = {
+export type NodeProcessStrategyType = StrategyBase & {
   type: "node",
   path: string,
-  args: Array<string>,
+  args?: Array<string>,
   lsp?: boolean,
 };
 
 export type ShellStrategyType = StrategyBase & {
   type: "shell",
   command: string,
-  shell: Shell,
   lsp?: boolean,
 };
 
 export type TerminalStrategyType = StrategyBase & {
   type: "terminal",
   command: string,
-  shell: Shell,
 };
 
 export type Strategy = ShellStrategyType | NodeProcessStrategyType | TerminalStrategyType;

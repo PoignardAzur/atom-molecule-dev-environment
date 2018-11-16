@@ -1,6 +1,7 @@
 "use babel";
 // @flow
 
+import type { Component } from "react";
 import type {
   ConfigSchemaPart,
   PlanConfig,
@@ -31,14 +32,18 @@ export type PluginInfo = {
   defaultDiagnosticsMode?: DiagnosticMode,
 };
 
+// TODO
+type DiagnosticProps = any;
+
 export type Plugin = {
   info: PluginInfo,
   configSchema: ConfigSchemaPart,
   getStrategyForPlan: GetStrategyForPlan,
-  DiagnosticView?: any,
+  DiagnosticView?: Component<DiagnosticProps>,
   isPackage?: PackageTester,
 };
 
-export type ProvidedDevTool = Plugin & {
+export type ProvidedDevTool = {
+  ...Plugin,
   info: DevTool,
 };
